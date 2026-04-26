@@ -3,170 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC Cosplay Creatures</title>
+    <title>DC Cosplay Creatures | Crafting the Extraordinary</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:
-    ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:ital,wght@0,100..900;1,400&family=Playfair+Display:wght@400..700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/28c91444ac.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <header class="head">
         <div class="logo">
-               <a href="WEB-DEVPROJECT.html"><img src="images/logo.png" alt="DC-Logo" class="dc-logo"></a>
-               <span class="DC">DC COSPLAY CREATURES</span>
+            <img src="images/logo.png" alt="DC-Logo" class="dc-logo">
+            <span class="DC">DC COSPLAY CREATURES</span>
         </div>
         <nav>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#costumes">SERVICES</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#costumes">COSTUMES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-image">
-            <img src="images/model.png" alt="cosplay-model">
+    <section id="home" class="hero hero-clean">
+        <div class="hero-content">
+            <h1>Dress. Play. Inspire</h1>
+            <p>Premium costume rentals, custom designs, and professional styling
+               services for every occasion. Open for all ages.
+            </p>
         </div>
-        <div class="hero-text">
-            <h1>
-                Dress. Play.
-                <span>Inspire.</span>
-            </h1>
-            <p>Premium costume rentals, custom<br>designs,
-               and professional styling<br>services
-               for every occasion. Open for<br>all ages.</p>
-        <div class="buttons">
-            <a href="#costumes"><button class="btn1">Browse Costumes</button></a>
-        </div>  
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>OUR SERVICES</h2>
+            <p>Quality pieces and services made for every cosplayer.</p>
         </div>
-    </section> 
+        <div class="service-container">
+            <div class="service-card">
+                <i class="fa-solid fa-scissors"></i>
+                <h3>Designer Costumes</h3>
+                <p>Custom-crafted costumes for a wide range of characters.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Perfect Wigs</h3>
+                <p>Find high-quality pre-styled customizable wigs to complete your look.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Authentic Props</h3>
+                <p>Source detailed accessories to bring characters to life.</p>
+            </div>
+        </div>
+    </section>
     <section id="about" class="about-us">
         <div class="about-container">
             <div class="about-text">
                 <h2>ABOUT US</h2>
-                <p>
-                DC Cosplay Creatures is a creative costume and design shop<br>
-                based in Antipolo, specializing in cosplay costumes, gowns, and<br>
-                custom outfit creations to life through detailed craftsmanship,<br>
-                creativity, and passion for wearable art.
-                </p>
-                <p>
-                From fantasy and gaming inspired costumes to special event<br>
-                outfits and themed designs, we work hard to create pieces that<br>
-                help our clients stand out with confidence. Every project is<br>
-                made with care, originality, and attention to detail.
-                </p>
+                <p>DC Cosplay Creatures is a creative costume and design shop based in Antipolo. We specialize in bringing cosplay costumes, gowns, and custom outfit creations to life through detailed craftsmanship.</p>
+                <p>Every project is made with care, originality, and attention to detail, ensuring you stand out with confidence.</p>
+                <a href="#contact" class="btn-outline">LEARN MORE</a>
             </div>
-            <div class="about-images">
-                <img src="images/Costume-Display.jpg" alt="Costume-display">
+            <div class="about-image">
+                <div class="img-wrapper">
+                    <img src="images/model3.jpg" alt="Model1" class="rounded-img img1">
+                    <img src="images/model2.jpg" alt="Model2" class="rounded-img img2">
+                </div>
             </div>
         </div>
     </section>
-
-    <section id="Our-services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-        <div>
-            <img src="images/Designer-Costumes.png" alt="Designer-Costumes">
-            <h3>Designer<br>Costumes</h3>
-            <p>Custom-crafted<br>costumes for a wide<br>range of characters</p>
+    <section id="costumes" class="costumes-gallery">
+        <div class="section-header">
+            <h2>CURATED COLLECTIONS</h2>
+            <p>A glimpse into our stunning collection and past projects.</p>
         </div>
-        <div>
-            <img src="images/Perfect-Wigs.png" alt="Perfect-Wigs">
-            <h3>Perfect<br>Wigs</h3>
-            <p>Find high-quality pre-<br>styled customizable wigs<br>to complete your look</p>
+        <div class="gallery-filter">
+            <span class="filter-item active">ALL</span>
+            <span class="filter-item">ANIME</span>
+            <span class="filter-item">GAMING</span>
+            <span class="filter-item">MOVIES</span>
+            <span class="filter-item">ORIGINAL</span>
         </div>
-        <div>
-            <img src="images/Authentic-Props.png" alt="Authentic-Props">
-            <h3>Authentic<br>Props</h3>
-            <p>Source detailed and<br> accessories to bring<br>characters to life</p>
+        <div class="gallery-grid">
+            <div class="photocard"><img src="images/photocard1.jpg" alt="Cosplay 1"></div>
+            <div class="photocard"><img src="images/photocard2.jpg" alt="Cosplay 2"></div>
+            <div class="photocard"><img src="images/photocard3.png" alt="Cosplay 3"></div>
+            <div class="photocard"><img src="images/photocard4.png" alt="Cosplay 4"></div>
+            <div class="photocard"><img src="images/photocard5.jpg" alt="Cosplay 5"></div>
+            <div class="photocard"><img src="images/photocard6.jpg" alt="Cosplay 6"></div>
         </div>
+        <div class="gallery-footer">
+            <button class="btn-view-more">VIEW MORE</button>
         </div>
     </section>
-    <section id="costumes" class="image">
-    <div class="title">
-        <h3>COSTUME</h3>
-        <p>A glimpse our stunning collection and past projects</p>
+   <footer id="contact" class="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <h2 class="contact-title">GET IN TOUCH</h2>
+            <div class="divider"></div>
+            <p class="contact-subtitle">We'd love to hear from you. Send us a message for inquiries, bookings, or custom requests.</p>
+            <div class="contact-details">
+                <p><i class="fa-solid fa-location-dot"></i> Maria Corazon Dos Brgy. Sta Cruz A.C</p>
+                <p><i class="fa-solid fa-clock"></i> Mon-Sat: 7AM-7PM (Sun: 10AM-5PM)</p>
+                <p><i class="fa-solid fa-phone"></i> +63 961 736 1552<br>+63 928 482 8706</p>
+                <p><i class="fa-solid fa-envelope"></i> dccosplaycreatures@gmail.com</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-image">
+            <img src="images/frame.jpg" alt="Framed Logo"> </div>
+        <div class="footer-form">
+            <h3>SEND US A MESSAGE</h3>
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <textarea placeholder="Message" rows="6"></textarea>
+                <button type="submit" class="btn-send">SEND MESSAGE</button>
+            </form>
+        </div>
     </div>
-    <div class="section1">
-        <div class="photocard">
-            <img src="images/photocard1.png" alt="photo1">
+    <div class="footer-copyright">
+        <div class="footer-logo-small">
+            <img src="images/logo.png" alt="Logo">
         </div>
-        <div class="photocard">
-            <img src="images/photocard2.png" alt="photo2">
-        </div>
-        <div class="photocard">
-            <img src="images/photocard3.png" height="400" alt="photo3">
-        </div>
-        <div class="photocard">
-            <img src="images/photocard4.png" alt="photo4">
-        </div>
-        <div class="photocard">
-            <img src="images/photocard5.png" alt="photo5">
-        </div>
-        <div class="photocard">
-            <img src="images/photocard6.png" alt="photo6">
-        </div>
+        <p>&copy; 2026 DC Cosplay Creatures. All rights reserved.</p>
     </div>
-</section>
-    <footer id="contact" class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4 class="title">DC Cosplay Creatures</h4>
-
-      <h5 class="section">Shopping With Us</h5>
-      <ul>
-        <li><a href="#">Order Payment</a></li>
-        <li><a href="#">Special Offers</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-      <h5 class="section">Contact Us</h5>
-      <div class="contact-item">
-        <i class="fa-solid fa-at"></i>
-        <span>N/A</span>
-      </div>
-      <div class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>+63 961 736 1552</span>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>+63 928 482 8706</span>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Maria Corazon Dos Brgy. Sta Cruz A.C</span>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h5 class="section">Company Information</h5>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-
-      <h5 class="section">Facebook Page</h5>
-      <div class="fb-box">
-        <a href="https://www.facebook.com/profile.php?id=100064195204727" target="_blank">
-          <img src="images/logo.png" alt="DC Cosplay Logo">
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <i class="fa-solid fa-copyright"></i>
-    <span>2026 DC Cosplay Creatures</span>
-  </div>
-
 </footer>
+
 </body>
 </html>
