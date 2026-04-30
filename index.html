@@ -163,53 +163,63 @@ document.addEventListener('DOMContentLoaded', () => {
         "gaming": [
             "gaming.jpg/gaming1.jpg", 
             "gaming.jpg/gaming2.jpg", 
-            "gaming.jpg/gaming3.jpg",
-            "gaming.jpg/gaming4.jpg", 
+            "gaming.jpg/gaming4.jpg",
             "gaming.jpg/gaming5.jpg", 
+            "gaming.jpg/gaming3.jpg", 
             "gaming.jpg/gaming6.jpg"
         ],
         "movies": [
-            "movie.jpg/movie1.jpg", 
-            "movie.jpg/movie2.jpg", 
-            "movie.jpg/movie3.jpg",
+            "movie.jpg/movie3.jpg", 
             "movie.jpg/movie4.jpg", 
+            "movie.jpg/movie2.jpg",
+            "movie.jpg/movie6.jpg", 
             "movie.jpg/movie5.jpg", 
-            "movie.jpg/movie6.jpg"
+            "movie.jpg/movie1.jpg"
         ],
         "original": [
             "original4.jpg/1.jpg", 
             "original4.jpg/2.jpg", 
-            "original4.jpg/3.jpg",
-            "original4.jpg/4.jpg", 
-            "original4.jpg/5.jpg", 
-            "original4.jpg/6.jpg"
+            "original4.jpg/5.jpg",
+            "original4.jpg/6.jpg", 
+            "original4.jpg/3.jpg", 
+            "original4.jpg/4.jpg"
         ]
     };
 
     const filterItems = document.querySelectorAll('.filter-item');
-    const images = document.querySelectorAll('#gallery-grid img');
+    const galleryImages = document.querySelectorAll('#gallery-grid img');
 
     filterItems.forEach(item => {
         item.addEventListener('click', function() {
+           
             filterItems.forEach(i => i.classList.remove('active'));
             this.classList.add('active');
 
             const category = this.getAttribute('data-category');
-            const newImages = categoryData[category];
+            const newImageUrls = categoryData[category];
 
-            images.forEach((img, index) => {
+            galleryImages.forEach(img => {
                 img.style.opacity = '0';
-                
-                setTimeout(() => {
-                    if (newImages && newImages[index]) {
-                        img.src = newImages[index];
-                    }
-                    img.style.opacity = '1'; 
-                }, 300);
             });
+
+            setTimeout(() => {
+                galleryImages.forEach((img, index) => {
+                    if (newImageUrls && newImageUrls[index]) {
+                        img.src = newImageUrls[index];
+                        
+                        img.onload = () => {
+                            img.style.opacity = '1';
+                        };
+                        
+                        if (img.complete) {
+                            img.style.opacity = '1';
+                        }
+                    }
+                });
+            }, 400); 
         });
     });
 });
 </script>
 </body>
-</html>
+</html> 
