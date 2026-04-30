@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | DC Cosplay Creatures</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:ital,wght@0,100..900;1,400&family=Playfair+Display:wght@400..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/28c91444ac.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
+    <header class="head">
+        <div class="logo">
+            <img src="page.jpg/logo.png" alt="DC-Logo" class="dc-logo">
+            <span class="DC">DC COSPLAY CREATURES</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#home">HOME</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#services">SERVICES</a></li>
+                <li><a href="index.html#costumes">COSTUMES</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="collection-gallery">
+        <div class="collection-header">
+            
+            <div class="section-header">
+                <h2>FULL COLLECTION</h2>
+                <p>Explore our history of costume designs.</p>
+            </div>
+        </div>
+        
+        <div class="collection-grid full-grid gallery-grid">
+            <div class="photocard"><img src="gallery/g1.jpg" alt="cosplay 1"></div>
+            <div class="photocard"><img src="gallery/g3.jpg" alt="cosplay 2"></div>
+            <div class="photocard"><img src="gallery/g5.jpg" alt="cosplay 3"></div>
+            <div class="photocard"><img src="gallery/g6.jpg" alt="cosplay 4"></div>
+            <div class="photocard"><img src="gallery/g4.jpg" alt="cosplay 5"></div>
+            <div class="photocard"><img src="gallery/g2.jpg" alt="cosplay 6"></div>
+        </div>
+        <div class="pagination">
+            <span class="page-link active" data-page="1">1</span>
+            <span class="page-link" data-page="2">2</span>
+            <span class="page-link" data-page="3">3</span>
+            <span class="page-link" data-page="4">4</span>
+            <span class="page-link" data-page="5">5</span>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-copyright">
+            <div class="footer-logo-small">
+                <img src="page.jpg/logo.png" alt="Logo">
+            </div>
+            <p>&copy; 2026 DC Cosplay Creatures. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryPages = {
+        "1": ["gallery/g1.jpg", "gallery/g3.jpg", "gallery/g5.jpg", "gallery/g6.jpg", "gallery/g4.jpg", "gallery/g2.jpg"],
+        "2": ["gallery/a3.jpg", "gallery/a4.jpg", "gallery/a5.jpg", "gallery/a2.jpg", "gallery/a1.jpg", "gallery/a6.jpg"], 
+        "3": ["gallery/b1.jpg", "gallery/b2.jpg", "gallery/b5.jpg", "gallery/b4.jpg", "gallery/b3.jpg", "gallery/b6.jpg"],
+        "4": ["gallery/c1.jpg", "gallery/c6.jpg", "gallery/c3.jpg", "gallery/c4.jpg", "gallery/c5.jpg", "gallery/c2.jpg"],
+        "5": ["gallery/d1.jpg", "gallery/d3.jpg", "gallery/d5.jpg", "gallery/d6.jpg", "gallery/d4.jpg", "gallery/d2.jpg"]
+    };
+
+    const pageLinks = document.querySelectorAll('.page-link');
+    const galleryImages = document.querySelectorAll('.collection-grid img');
+
+    pageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            
+            pageLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+           
+            const pageNumber = this.getAttribute('data-page');
+            const newImages = galleryPages[pageNumber];
+
+            if (!newImages) return;
+
+            galleryImages.forEach(img => img.style.opacity = '0');
+
+            setTimeout(() => {
+                galleryImages.forEach((img, index) => {
+                    if (newImages[index]) {
+                        img.src = newImages[index];
+                        img.onload = () => {
+                            img.style.opacity = '1';
+                        };
+                        if (img.complete) {
+                            img.style.opacity = '1';
+                        }
+                    }
+                });
+                document.querySelector('.collection-gallery').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 150); 
+        });
+    });
+});
+</script>
+
+</body>
+</html>
