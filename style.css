@@ -272,6 +272,7 @@ body {
     transition: 0.3s;
     position: relative;
     justify-content: center;
+    user-select: none;
 }
 .filter-item.active {
     color: #000;
@@ -304,7 +305,7 @@ body {
     height: 450px;
     object-fit: cover;
     display: block;
-    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.4s ease;
 }
 .photocard:hover img {
     transform: scale(1.1);
@@ -399,42 +400,6 @@ body {
     max-width: 350px;
     height: 450px;
     padding: 10px;
-}
-.footer-form h3 {
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 30px;
-    font-weight: 500;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-.footer-form input, 
-.footer-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #eee;
-    background: #fafafa;
-    font-family: var(--body-font);
-    font-size: 0.85rem;
-}
-.btn-send {
-    background: #000;
-    color: #fff;
-    padding: 15px 40px;
-    border: none;
-    font-weight: 700;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.btn-send:hover {
-    background: #333;
 }
 .footer-copyright {
     border-top: 1px solid var(--soft-border);
@@ -640,8 +605,6 @@ body {
     .footer-form textarea {
         padding: 12px;
     }
-
-    /* Footer copyright */
     .footer-copyright {
         margin: 0 -5.6%;
         padding: 20px 5%;
