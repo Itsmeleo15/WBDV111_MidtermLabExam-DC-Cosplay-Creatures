@@ -246,6 +246,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.getElementById('fullName');
+    const phoneInput = document.getElementById('phoneNum');
+    const statusMsg = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    
+    nameInput.addEventListener('input', () => {
+        nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+    });
+
+    
+    phoneInput.addEventListener('input', (e) => {
+        let val = e.target.value.replace(/\D/g, ''); 
+        if (val.length > 11) {
+            val = val.slice(0, 11); 
+        }
+        phoneInput.value = val;
+    });
+
+    
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (phoneInput.value.length !== 11) {
+            statusMsg.style.color = "orange";
+            statusMsg.innerText = "✕ Please enter a valid 11-digit phone number.";
+            return;
+        }
+
+       
+        submitBtn.innerText = "SENDING...";
+        submitBtn.disabled = true;
+        statusMsg.style.color = "#666";
+        statusMsg.innerText = "Saving to our records...";
+
+        const data = {
+            name: nameInput.value,
+            phone: phoneInput.value,
+            message: document.querySelector('.form-textarea').value
+        };
+
+        try {
+            
+            const scriptURL = 'https://docs.google.com/spreadsheets/d/1mNgbCtNu94PFCaFyHWLyGiLLVRh96olM/edit?usp=sharing&ouid=113619698658555787794&rtpof=true&sd=true';
+            
+            await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', 
+                cache: 'no-cache',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+        
+            statusMsg.style.color = "green";
+            statusMsg.innerHTML = `
+                ✓ Saved! <a href="https://m.me/100064195204727" target="_blank" style="color: black; font-weight: bold; text-decoration: underline; margin-left: 10px;">
+                Chat on Messenger for faster reply
+                </a>`;
+            contactForm.reset(); 
+
+        } catch (error) {
+            statusMsg.style.color = "red";
+            statusMsg.innerText = "✕ Error saving data. Please try again.";
+        } finally {
+            submitBtn.innerText = "SEND MESSAGE";
+            submitBtn.disabled = false;
+        }
+    });
+});
 </script>
 </body>
 </html> 
