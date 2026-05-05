@@ -144,13 +144,18 @@
         </div>
 
         <div class="footer-form-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Full Name" class="form-input">
-                <input type="tel" placeholder="Phone Number" class="form-input">
-                <textarea placeholder="Your Message" class="form-textarea"></textarea>
+            <form class="contact-form" id="contactForm">
+
+                <input type="text" name="name" id="fullName" placeholder="Full Name" class="form-input" required>
+
+                <input type="tel" name="phone" id="phoneNum" placeholder="Phone Number" class="form-input" required>
+                
+                <textarea name="message" placeholder="Your Message" class="form-textarea" required></textarea>
+                
                 <div class="form-button-wrapper">
-                    <button type="submit" class="btn-send">SEND MESSAGE</button>
+                    <button type="submit" class="btn-send" id="submitBtn">SEND MESSAGE</button>
                 </div>
+                <p id="formStatus"></p>
             </form>
         </div>
     </div>
