@@ -377,13 +377,13 @@ body {
 .footer {
     background: var(--pure-white);
     color: var(--primary-black);
-    padding: 100px 5% 40px;
+    padding: 100px 5% 0;
     border-top: 1px solid var(--soft-border);
 }
 .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr; 
-    gap: 50px;
+    grid-template-columns: 1.5fr 1fr 1.5fr; 
+    gap: 60px;
     max-width: 1300px;
     margin: 0 auto 80px;
     align-items: start;
@@ -391,8 +391,9 @@ body {
 .contact-title {
     font-family: var(--heading-font);
     font-size: 2.5rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 0; 
+    margin-bottom: 20px;
 }
 
 .divider {
@@ -403,22 +404,84 @@ body {
 }
 
 .contact-subtitle {
-    color: var(--accent-gray);
+    color: #666;
     margin-bottom: 30px;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .contact-details p {
-    margin-bottom: 15px;
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    font-size: 0.9rem;
+    align-items: center; 
+    gap: 15px;           
+    margin-bottom: 15px;
+    font-size: 0.95rem;
 }
 
 .contact-details i {
     width: 20px;
-    margin-top: 5px;
+    text-align: center;
+    color: #333;
+}
+.phone-list p {
+    margin-bottom: 5px;
+}
+.contact-card {
+    background: #f0f0f0; 
+    padding: 60px 80px;  
+    border-radius: 60px; 
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr; 
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto 100px;
+    align-items: start;
+}
+.form-input {
+    width: 100%;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; 
+    background: #f9f9f9;
+    outline: none;
+}
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+.form-textarea {
+    min-height: 180px;
+    resize: none;
+}
+
+.form-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.btn-send {
+    background: #000;
+    color: #fff;
+    padding: 12px 35px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.btn-send:hover {
+    background: #333;
+}
+.footer-left-content {
+    display: flex;
+    flex-direction: none;
+    gap: 30px;
 }
 
 .footer-socials {
@@ -437,6 +500,10 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
+.footer-info {
+    display: flex;
+    flex-direction: column;
+}
 .footer-image img {
     width: 100%;
     max-width: 200px;
@@ -446,27 +513,55 @@ body {
 }
 .footer-container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1.5fr; 
     gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    align-items: center; 
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    align-items: start
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
 }
 .footer-copyright {
-    border-top: 1px solid var(--soft-border);
-    padding-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000; 
+    background: #000;
     color: #fff;
-    margin: 0 -5.6%;
     padding: 30px 5%;
-    margin-bottom: -40px;
+    margin: 0 -5.6% -40px;
 }
 .footer-logo-small img {
     height: 40px;
     filter: invert(1); 
+}
+.footer-links h3 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    margin-top: 0; 
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li ul {
+    margin-bottom: 15px;
+}
+.footer-links a, .contact-details a {
+    text-decoration: none;
+    color: var(--accent-gray);
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+#formStatus {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    text-align: right;
+    min-height: 20px;
 }
 @media (max-width: 1024px) {
     .footer-container {
