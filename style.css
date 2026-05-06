@@ -89,6 +89,8 @@ body {
     text-align: center;
     background-color: var(--warm-gray);
     padding: 0 5%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.288);
 }
 
 .hero-content h1 {
@@ -517,7 +519,7 @@ body {
     gap: 50px;
     max-width: 1400px;
     margin: 0 auto 100px;
-    align-items: start
+    align-items: start;
 }
 .footer-links {
     display: flex;
