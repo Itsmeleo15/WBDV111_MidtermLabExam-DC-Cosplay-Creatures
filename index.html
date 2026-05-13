@@ -255,18 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     nameInput.addEventListener('input', (e) => {
-    const input = e.target;
-    const start = input.selectionStart; 
-    const end = input.selectionEnd;
+        const input = e.target;
+        const start = input.selectionStart; 
+        const end = input.selectionEnd;
+        const cleanedValue = input.value.replace(/[^a-zA-Z\s]/g, '');
 
-   
-    const cleanedValue = input.value.replace(/[^a-zA-Z\s]/g, '');
-
-    if (input.value !== cleanedValue) {
-        input.value = cleanedValue;
-        input.setSelectionRange(start - 1, end - 1);
-    }
-});
+        if (input.value !== cleanedValue) {
+            input.value = cleanedValue;
+            input.setSelectionRange(start - 1, end - 1);
+        }
+    });
 
     
     phoneInput.addEventListener('input', (e) => {
@@ -281,26 +279,42 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+       
+        const fullNameValue = nameInput.value.trim();
+        
+        
+        const nameParts = fullNameValue.split(/\s+/).filter(part => part.length > 0);
+
+        if (nameParts.length < 2 || fullNameValue.length < 5) {
+            statusMsg.style.color = "orange";
+            statusMsg.innerText = "✕ Please enter your complete Full Name (First and Last name).";
+            nameInput.style.border = "2px solid orange";
+            nameInput.focus();
+            return; 
+        }
+
+        
         if (phoneInput.value.length !== 11) {
             statusMsg.style.color = "orange";
             statusMsg.innerText = "✕ Please enter a valid 11-digit phone number.";
-            return;
+            phoneInput.focus();
+            return; 
         }
 
        
+        nameInput.style.border = ""; 
         submitBtn.innerText = "SENDING...";
         submitBtn.disabled = true;
         statusMsg.style.color = "#666";
         statusMsg.innerText = "Saving to our records...";
 
         const data = {
-            name: nameInput.value,
+            name: fullNameValue, 
             phone: phoneInput.value,
             message: document.querySelector('.form-textarea').value
         };
 
         try {
-            
             const scriptURL = '_';
             
             await fetch(scriptURL, {
@@ -311,7 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(data)
             });
 
-        
             statusMsg.style.color = "green";
             statusMsg.innerHTML = `
                 ✓ Saved! <a href="https://m.me/100064195204727" target="_blank" style="color: black; font-weight: bold; text-decoration: underline; margin-left: 10px;">
